@@ -136,8 +136,12 @@ export const RegisterForm = () => {
           selector={(state) => [state.canSubmit, state.isSubmitting]}
           children={([canSubmit, isSubmitting]) => (
             <div className="mt-4 flex w-full flex-col gap-3">
-              <Button type="submit" disabled={!canSubmit || isSubmitting}>
-                {isSubmitting ? '...' : 'Зарегистрироваться'}
+              <Button
+                type="submit"
+                loading={isSubmitting}
+                disabled={!canSubmit || isSubmitting}
+              >
+                Зарегистрироваться
               </Button>
               {serverError && (
                 <span

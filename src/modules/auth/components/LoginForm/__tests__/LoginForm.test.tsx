@@ -90,7 +90,7 @@ describe('LoginForm', () => {
     fireEvent.submit(screen.getByRole('button', { name: /войти/i }));
 
     await waitFor(() => {
-      expect(screen.getByRole('button', { name: /\.\.\./i })).toBeDisabled();
+      expect(screen.getByRole('button', { name: /войти/i })).toBeDisabled();
     });
   });
 });

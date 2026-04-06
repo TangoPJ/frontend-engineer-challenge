@@ -177,8 +177,12 @@ export const ResetPasswordForm = () => {
             selector={(state) => [state.canSubmit, state.isSubmitting]}
             children={([canSubmit, isSubmitting]) => (
               <div className="mt-4">
-                <Button type="submit" disabled={!canSubmit || isSubmitting}>
-                  {isSubmitting ? '...' : 'Изменить пароль'}
+                <Button
+                  type="submit"
+                  loading={isSubmitting}
+                  disabled={!canSubmit || isSubmitting}
+                >
+                  Изменить пароль
                 </Button>
               </div>
             )}

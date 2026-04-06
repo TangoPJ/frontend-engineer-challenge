@@ -130,9 +130,10 @@ export const RecoverPasswordForm = () => {
                 <Button
                   type="submit"
                   variant="secondary"
+                  loading={isSubmitting}
                   disabled={!canSubmit || isSubmitting}
                 >
-                  {isSubmitting ? '...' : 'Восстановить пароль'}
+                  Восстановить пароль
                 </Button>
                 {serverError && (
                   <span
